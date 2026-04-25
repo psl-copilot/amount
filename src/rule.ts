@@ -93,7 +93,7 @@ export async function handleTransaction(
     return {...ruleRes, subRuleRef: InsufficientHistory.subRuleRef, reason: InsufficientHistory.reason };
   }
 
-  var tolerance = amounts[0] * ruleConfig.config.parameters.tolerance;
+  const tolerance = amounts[0] * ruleConfig.config.parameters.tolerance;
   // Loop: reduce over amounts
   const countOfMatchingAmounts = amounts.reduce((acc, val) => {
     if (Math.abs(val - amounts[0]) <= tolerance) {
